@@ -1,0 +1,124 @@
+#loginBox{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+header, footer{
+    height: 7vh;
+    background-color: #f6f6f6;
+}
+
+header, footer, #welcome{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#menu{
+    padding: 0 5px; 
+}
+
+.dropdown-menu{
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    position: absolute;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    width: 25vh;
+    height: 25vh;
+}
+
+.show{
+    display: flex;
+}
+
+li{
+    background-color: #f6f6f6;
+    height: 3vh;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+}
+
+li:hover{
+    opacity: 0.5;
+}
+
+#logo{
+    height: 7vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main{
+    height: 86vh;
+    background-color: #3D7DCA;
+}
+
+#mainLogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#welcome{
+    color: white;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+}
+
+input{
+    height: 3vh;
+    width: 25vh;
+    text-align: center;
+    margin-top: 10px;
+    border: none;
+    box-sizing: border-box;
+}
+#loginBtn{
+    background-color: white;
+    width: 15vh;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+}
+
+#loginBtn:hover{
+    opacity: 0.5;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: #3D7DCA;
+}
