@@ -22,19 +22,25 @@ header{
 }
 
 #menu{
-    padding: 0 5px; 
+    padding: 0 5px;
+
+}
+
+button{
+    background: none;
+    border: none;
 }
 
 .dropdown-menu{
-    display: none;
+    display: flex;
     flex-direction: column;
-    align-content: center;
+    justify-content: center;
     position: absolute;
     list-style: none;
-    text-align: center;
     padding: 0;
     width: 25vh;
     height: 25vh;
+
 }
 
 .show{
@@ -42,8 +48,10 @@ header{
 }
 
 li{
+    flex-grow: 1;
+    text-align: center;
     background-color: #f6f6f6;
-    height: 3vh;
+    /* padding: 5px 0; */
     opacity: 1;
     transition-property: opacity;
     transition-duration: 0.5s;
