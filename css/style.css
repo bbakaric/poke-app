@@ -1,10 +1,4 @@
-#loginBox{
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-}
-
-#homepageBox{
+#wrapper{
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -162,4 +156,38 @@ a{
     font-weight: bold;
     font-size: 30px;
     color: white;
+}
+
+#search{
+    width: fit-content;
+    height: fit-content;
+    border: white 5px solid;
+    padding: 0;
+    height: 5vh;
+    width: 10vh;
+    background: url(/images/search_icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1{
+    text-align: center;
+}
+
+#searchBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#searchBox > input{
+    margin-top: 0;
+    width: 50%;
+    height: 5vh;
+}
+
+#srchlogo{
+    
 }
