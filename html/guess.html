@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="/css/style.css">
-    <script src="js/app.js" defer></script>
+    <script src="/js/app.js" defer></script>
     <title>Pokemon app - Guess the Pokemon</title>
 </head>
-<body id="guessBox">
+<body id="wrapper">
     <header>
         <section id="drp">
             <button id="menu">
@@ -17,23 +17,33 @@
             </button>
             <ul class="dropdown-menu">
                 <li><a href="/html/homepage.html">Home Page</a></li>
-                <li><a href="/html/about.html">About Pokemon</a></li>
-                <li><a href="/html/about.html">Find Your Pokemon</a></li>
-                <li><a href="/html/about.html">Pokemon Battle</a></li>
-                <li><a href="/html/about.html">Guess the Pokemo</a>n</li>
-                <li><a href="/html/about.html">Favourites</a></li>
+                <li><a href="/html/find.html">Find Your Pokemon</a></li>
+                <li><a href="/html/battle.html">Pokemon Battle</a></li>
+                <li><a href="/html/guess.html">Guess the Pokemo</a>n</li>
+                <li><a href="/html/favourites.html">Favourites</a></li>
                 <li>Username</li>
             </ul>
         </section>
         <section>
-            <img id="logo" src="images/main_logo.png" alt="logo">
+            <a href="/html/homepage.html">
+                <img id="logo" src="/images/main_logo.png" alt="logo">
+            </a>  
         </section>
         <section>
-            <img id="menu" src="images/sign_out.png" alt="menu">
+            <a href="/index.html">
+                <img id="menu" src="/images/sign_out.png" alt="menu">
+            </a>
         </section>
     </header>
     <main id="mainGuess">
-
+        <h1>Guess the Pokemon</h1>
+        <p>Click on the pokeball bellow and try to guess the name of the Pokemon</p>
+        <img src="/images/generate_buttton.png" alt="generate" id="generateBtn">
+        <ul id="poke-image"></ul>
+        <form action="">
+            <input type="text">
+            <button type="submit">Try</button>
+        </form>
     </main>
     <footer id="footer">
        <p>Pokemon app &copy; 2021
