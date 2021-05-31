@@ -7,13 +7,13 @@
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/app.js" defer></script>
-    <title>Pokemon app</title>
+    <!-- <script src="js/app.js" defer></script> -->
+    <title>Pokedex - mini</title>
 </head>
-<body id="wrapper">
-    <div id="login-back" class="login-back">
+<body>
+    <!-- <div id="login-back" class="login-back">
         <div>
-        <p>Before You enter, please sign in by entering username and</p>
-        <p>password of Your own choosing.</p>
+        <p>Please enter your username</p>
         </div>
         <form action="" method="post">
             <label for="username"></label>
@@ -29,50 +29,24 @@
                 value="Login"
             >
         </form>
-    </div>
+    </div> -->
     <header>
-        <section id="drp">
-            <button id="menu">
-                <img src="/images/menu.png" alt="menu">
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="/html/homepage.html">Home Page</a></li>
-                <li><a href="/html/find.html">Find Your Pokemon</a></li>
-                <li><a href="/html/battle.html">Pokemon Battle</a></li>
-                <li><a href="/html/guess.html">Guess the Pokemo</a>n</li>
-                <li><a href="/html/favourites.html">Favourites</a></li>
-                <li>Username</li>
-            </ul>
-        </section>
-        <section>
-            <a href="/html/homepage.html">
-                <img id="logo" src="/images/main_logo.png" alt="logo">
-            </a>  
-        </section>
-        <section>
-            <a href="/index.html">
-                <img id="menu" src="/images/sign_out.png" alt="menu">
-            </a>
-        </section>
+        <h2>Username</h2>
+            <img id="logo" src="images/main_logo.png" alt="logo">
+            <img id="sign_out" src="images/sign_out.png" alt="sign_out">
     </header>
     <main id="mainHome">
-        <p>Username choose your action !</p>
-        <section class="appSections">
-            <a href="/html/find.html">
-                <img src="/images/pokedex_image.png" alt="find" class="appLinks">
-            </a>
-            <a href="/html/battle.html">
-                <img src="/images/battle_image.png" alt="battle" class="appLinks">
-            </a>
-        </section>
-        <section class="appSections">
-            <a href="/html/guess.html">
-                <img src="/images/guess.png" alt="guess" class="appLinks">
-            </a>
-            <a href="/html/favourites.html">
-                <img src="/images/favourites.png" alt="favourites" class="appLinks">
-            </a>
-        </section>
+        <p>Enter the name of the Pokemon to get more information about that Pokemon</p>
+        <form id="searchBox" action="">
+            <input id="searchBar" type="search" placeholder="Enter Pokemon name">
+            <button id="searchBtn" type="submit">
+                Search
+            </button>
+            <button id="randomBtn" type="submit">
+                Random
+            </button>
+        </form>
+        <div id="infoContainer"></div>
     </main>
     <footer>
        <p>Pokemon app &copy; 2021
@@ -81,3 +55,27 @@
     </footer>
 </body>
 </html>
+
+<!-- `
+                        <table class='table-content'>
+                            <tr>
+                                <th id='poke-image' rowspan='6'>${image}
+                                </th>
+                                <th>Info</th>
+                            </tr>
+                            <tr>
+                                <td>${name}</td>
+                            </tr>
+                            <tr>
+                                <td>${type}</td>
+                            </tr>
+                            <tr>
+                                <td>${hp}</td>
+                            </tr>
+                            <tr>
+                                <td>${attack}</td>
+                            </tr>
+                            <tr>
+                                <td>${defense}</td>
+                            </tr>
+                    </table>` -->
