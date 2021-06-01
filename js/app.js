@@ -30,6 +30,8 @@ searchBtn.addEventListener('click', function(event){
                     // defense = pokeData[poke].stats[2].base_stat;
 
                     pokeInfo += `<ul><li>${name}</li></ul>`;
+
+                    console.log(pokeData);
                 }
             }
             else{
