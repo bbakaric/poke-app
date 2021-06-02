@@ -48,13 +48,22 @@ main > p{
     font-size: 25px;
 }
 
-table, th, td{
-    border: 1px solid black;
+table{
+    display: none;
+}
+
+.show-table{
+    display: block;
+    border-collapse: collapse;
+}
+
+th, td{
+    border: 2px solid black;
     border-collapse: collapse;
 }
 
 .table-content{
-    width: fit-content;
+    width:  auto;
 }
 
 /* footer */

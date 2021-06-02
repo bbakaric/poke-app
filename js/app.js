@@ -1,51 +1,32 @@
 const searchBar = document.getElementById('searchBar');
 const searchBtn = document.getElementById('searchBtn');
 const randomBtn = document.getElementById('randomBtn');
-const infoContainer = document.getElementById('infoContainer');
 
-searchBtn.addEventListener('click', function(event){
+const getPokemonData = async term => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${term}`
+    const response = await fetch(url)
+
+    if(response.status == 404 || response.statusText == 'Not Found' || searchBar.value == ''){
+        alert('Pokemon not found!');
+        return;
+    }
+
+    const pokemon = await response.json()
+
+    // console.log(pokemon);
+
+    img_url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png`;
+
+    document.getElementById('poke_name').innerHTML = `Name: ${pokemon.name}`;
+    document.getElementById('poke_type').innerHTML = `Type: ${pokemon.types[0].type.name}`;
+    document.getElementById('poke_hp').innerHTML = `HP: ${pokemon.stats[0].base_stat}`;
+    document.getElementById('poke_attack').innerHTML = `Attack: ${pokemon.stats[1].base_stat}`;
+    document.getElementById('poke_defense').innerHTML = `Defense: ${pokemon.stats[2].base_stat}`;
+    document.getElementById('table').classList.add('show-table');
+    document.getElementById("poke_image").setAttribute('src', pokemon.sprites.other['official-artwork'].front_default);
+}
+
+searchBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    let inputData = searchBar.value.trim();
-    if(inputData !== ""){
-        let xhr;
-        if(window.XMLHttpRequest){
-            xhr = new XMLHttpRequest();
-        }
-        else{
-            xhr = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-
-    xhr.onreadystatechange = function(){
-        if(this.readyState == 4 && this.status == 200){
-            let pokeInfo = "";
-            let pokeData = JSON.parse(this.responseText);
-            if(pokeData.length !== 0){
-                let image, name, type, hp, attack, defense;
-                for(const poke in pokeData){
-                    // image = pokeData[poke].sprites.other[1].front_default;
-                    name = pokeData[poke].name;
-                    // type = pokeData[poke].types.type.name;
-                    // hp = pokeData[poke].stats[0].base_stat;
-                    // attack = pokeData[poke].stats[1].base_stat;
-                    // defense = pokeData[poke].stats[2].base_stat;
-
-                    pokeInfo += `<ul><li>${name}</li></ul>`;
-
-                    console.log(pokeData);
-                }
-            }
-            else{
-                pokeInfo = 'Please enter valid Pokemon name!';
-            }
-            infoContainer.innerHTML = pokeInfo;
-        }
-    }
-    xhr.open("GET", `https://pokeapi.co/api/v2/pokemon/${inputData}`, true);
-    xhr.send();
-    }
-    else{
-        while(infoContainer.hasChildNodes()){
-            infoContainer.removeChild(infoContainer.firstChild);
-        }
-    }
+    getPokemonData(searchBar.value);
 });

@@ -6,30 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <script src="js/app.js" defer></script> -->
-    <script src="js/test.js" defer></script>
+    <script src="js/app.js" defer></script>
     <title>Pokedex - mini</title>
 </head>
 <body>
-    <!-- <div id="login-back" class="login-back">
-        <div>
-        <p>Please enter your username</p>
-        </div>
-        <form action="" method="post">
-            <label for="username"></label>
-            <input 
-                type="text"
-                id="username" 
-                name="username" 
-                placeholder="Enter Your Username"
-            >
-            <input 
-                id="loginBtn"
-                type="button" 
-                value="Login"
-            >
-        </form>
-    </div> -->
     <header>
         <h2>Username</h2>
             <img id="logo" src="images/main_logo.png" alt="logo">
@@ -38,8 +18,8 @@
     <main id="mainHome">
         <p>Enter the name of the Pokemon to get more information about that Pokemon</p>
         <form id="searchBox" action="">
-            <input id="searchBar" type="search" placeholder="Enter Pokemon name">
-            <button id="searchBtn" type="submit">
+            <input id="searchBar" placeholder="Enter Pokemon name" type="search" onfocus="this.value=''">
+            <button id="searchBtn">
                 Search
             </button>
             <button id="randomBtn" type="submit">
@@ -47,7 +27,29 @@
             </button>
         </form>
         <div id="infoContainer">
-            <ul id="dataList"></ul>
+            <table id="table" >
+                <tr>
+                    <th rowspan='6'>
+                        <img src="" alt="poke_image" id="poke_image">
+                    </th>
+                    <th>Info</th>
+                </tr>
+                <tr>
+                    <td id="poke_name"></td>
+                </tr>
+                <tr>
+                    <td id="poke_type"></td>
+                </tr>
+                <tr>
+                    <td id="poke_hp"></td>
+                </tr>
+                <tr>
+                    <td id="poke_attack"></td>
+                </tr>
+                <tr>
+                    <td id="poke_defense"></td>
+                </tr>
+        </table>
         </div>
     </main>
     <footer>
@@ -57,27 +59,3 @@
     </footer>
 </body>
 </html>
-
-<!-- `
-                        <table class='table-content'>
-                            <tr>
-                                <th id='poke-image' rowspan='6'>${image}
-                                </th>
-                                <th>Info</th>
-                            </tr>
-                            <tr>
-                                <td>${name}</td>
-                            </tr>
-                            <tr>
-                                <td>${type}</td>
-                            </tr>
-                            <tr>
-                                <td>${hp}</td>
-                            </tr>
-                            <tr>
-                                <td>${attack}</td>
-                            </tr>
-                            <tr>
-                                <td>${defense}</td>
-                            </tr>
-                    </table>` -->
