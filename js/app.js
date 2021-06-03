@@ -3,10 +3,10 @@ const searchBtn = document.getElementById('searchBtn');
 const randomBtn = document.getElementById('randomBtn');
 
 const getPokemonData = async term => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${term}`
-    const response = await fetch(url)
+    const url = `https://pokeapi.co/api/v2/pokemon/${term}`;
+    const response = await fetch(url);
 
-    if(response.status == 404 || response.statusText == 'Not Found' || searchBar.value == ''){
+    if(response.status == 404 || response.statusText == 'Not Found' || `${term}` == ''){
         alert('Pokemon not found!');
         return;
     }
@@ -14,8 +14,6 @@ const getPokemonData = async term => {
     const pokemon = await response.json()
 
     // console.log(pokemon);
-
-    img_url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png`;
 
     document.getElementById('poke_name').innerHTML = `Name: ${pokemon.name}`;
     document.getElementById('poke_type').innerHTML = `Type: ${pokemon.types[0].type.name}`;
@@ -29,4 +27,10 @@ const getPokemonData = async term => {
 searchBtn.addEventListener('click', (event) => {
     event.preventDefault();
     getPokemonData(searchBar.value);
+});
+
+randomBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    const randomId = Math.floor(Math.random() * (899 - 1)) + 1;
+    getPokemonData(randomId);
 });
