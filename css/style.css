@@ -11,20 +11,14 @@ header, main, footer {
 /* header */
 
 body > header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     background-color: #e9e3e3;
     height: 5vh;
 }
 
-header > h2{
-    color: black;
-    margin: 0;
-}
-
 #logo{
+    display: block;
     height: 5vh;
+    margin: auto;
 }
 
 /* main */
@@ -94,4 +88,23 @@ a{
 
 a:hover{
     color: #60aceb;
+}
+
+@media all and (max-width: 1048px) {
+    main > p{
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 450px) {
+    th, td{
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 375px){
+    form, button{
+        display: block;
+        margin: 2px auto;
+    }
 }

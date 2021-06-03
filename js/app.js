@@ -31,6 +31,7 @@ searchBtn.addEventListener('click', (event) => {
 
 randomBtn.addEventListener('click', (event) => {
     event.preventDefault();
+    searchBar.value = ''
     const randomId = Math.floor(Math.random() * (899 - 1)) + 1;
     getPokemonData(randomId);
 });
